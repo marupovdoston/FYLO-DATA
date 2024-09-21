@@ -1,0 +1,238 @@
+@import url(./reset.css);
+
+:root{
+    --Gradient1: hsl(6, 100%, 80%);
+    --Gradient2: hsl(335, 100%, 65%);
+
+    --PaleBlue: hsl(243, 100%, 93%);
+    --GrayishBlue: hsl(229, 7%, 55%);
+    --DarkBlue: hsl(228, 56%, 26%);
+    --VeryDarkBlue: hsl(229, 57%, 11%);
+}
+html,body{
+    font-family: 'Raleway';
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    background-image: url(./images/bg-desktop.png);
+    background-repeat: no-repeat;
+    background-position: bottom;
+    background-size: 100%;
+    background-color: var(--VeryDarkBlue);
+    width: 100%;
+}
+main{
+    display: flex;
+    align-items: end;
+    gap: 2vw;
+}
+.first-section{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    gap: 2vw;
+    background-color: var(--DarkBlue);
+    padding: 3vw;
+    width: clamp(14rem, 23vw, 20rem);
+    border-radius: 1vw 8vw 1vw 1vw;
+}
+.icons-div{
+    display: flex;
+    gap: 1vw;
+    align-items: center;
+    > div{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: var(--VeryDarkBlue);
+        height: 2.5rem;
+        width: 2.5rem;
+        border-radius: 0.5vw;
+    }
+}
+.second-section{
+    background-color: var(--DarkBlue);
+    width: clamp(25rem, 50vw, 35rem);
+    padding: 2vw 3vw;
+    position: relative;
+    border-radius: 0.8vw;
+    color: var(--PaleBlue);
+}
+.floating-div{
+    display: flex;
+    border-radius: 1vw 1vw 0;
+    background-color: white;
+    align-items: center;
+    position: absolute;
+    bottom: 5vw;
+    right: 0;
+    padding: 0.5vw 1.5vw;
+    gap: 0.7vw;
+    text-transform: uppercase;
+    h1{
+        color: black;
+        font-size: clamp(1.8rem, 2.5vw, 2.5rem);
+    }
+    p{
+        color: var(--GrayishBlue);
+        font-weight: bold;
+        font-size: 0.6rem;
+    }
+}
+.floating-div::after{
+    position: absolute;
+    content: '';
+    top: 100%;
+    right: 0%;
+    border-width: 0 2vw 2vw 0;
+    border-style: solid;
+    border-color: transparent white transparent transparent;
+}
+.storage-div{
+    position: relative;
+    display: flex;
+    align-items: center;
+    margin: 1.5vw 0;
+}
+progress{
+    width: 100%;
+    height: 1.5vw;
+    background-color: var(--VeryDarkBlue);
+    border-radius: 2vw;
+    position: relative;
+    font-size: clamp(0.8rem, 1vw, 1rem);
+}
+progress::-webkit-progress-bar{
+    background-color: var(--VeryDarkBlue);
+    border-radius: 2vw;
+}
+progress::-webkit-progress-value{
+    background:linear-gradient(90deg, var(--Gradient1), var(--Gradient2));
+    border-radius: 2vw;
+}
+progress::-moz-progress-bar{
+    background:linear-gradient(90deg, var(--Gradient1), var(--Gradient2));
+    border-radius: 2vw;
+}
+.storage-div::after{
+    content: '';
+    height: 1vw;
+    width: 1vw;
+    background-color: white;
+    position: absolute;
+    left: 77.8%;
+    top: 14%;
+    border-radius: 50%;
+}
+progress::before{
+    position: absolute;
+    content: '0 GB';
+    top: 150%;
+}
+progress::after{
+    position: absolute;
+    content: '1000 GB';
+    top: 150%;
+    right: 0%;
+}
+footer{
+    position: absolute;
+    top: 97%;
+}
+
+@media screen and (max-width: 600px) {
+    html, body{
+        background-image: url(./images/bg-mobile.png);
+        width: 100%;
+        padding: 3vw;
+    }
+    main{
+        width: 100%;
+        flex-direction: column;
+        gap: 4vw;
+    }
+    .first-section{
+        gap: 7vw;
+        padding: 10vw;
+        width: 100%;
+        border-radius: 2vw 25vw 2vw 2vw;
+    }
+    .icons-div{
+        gap: 5vw;
+        align-items: center;
+        > div{
+            height: 3.5rem;
+            width: 3.5rem;
+            border-radius: 1.5vw;
+        }
+        img{
+            width: 1.5rem;
+        }
+    }
+    .second-section{
+        background-color: var(--DarkBlue);
+        width: 100%;
+        padding: 8vw;
+        position: relative;
+        border-radius: 2vw;
+        color: var(--PaleBlue);
+    }
+    .floating-div{
+        display: flex;
+        border-radius: 2vw;
+        background-color: white;
+        align-items: center;
+        position: absolute;
+        bottom: -17vw;
+        right: 21vw;
+        padding: 1vw 5vw;
+        gap: 1.5vw;
+        h1{
+            color: black;
+            font-size: clamp(1.8rem, 2.5vw, 2.5rem);
+        }
+        p{
+            color: var(--GrayishBlue);
+            font-weight: 500;
+            font-size: 0.6rem;
+        }
+    }
+    .floating-div::after{
+        border-width: 0;
+    }
+    .storage-div{
+        margin: 4vw 0;
+    }
+    progress{
+        width: 100%;
+        height: 4vw;
+        border-radius: 5vw;
+        position: relative;
+        font-size: clamp(0.8rem, 1.2vw, 1.1rem);
+    }
+    progress::-webkit-progress-bar{
+        border-radius: 5vw;
+    }
+    progress::-webkit-progress-value{
+        border-radius: 5vw;
+    }
+    progress::-moz-progress-bar{
+        border-radius: 5vw;
+    }
+    .storage-div::after{
+        height: 3vw;
+        width: 3vw;
+        left: 76%;
+        top: 12%;
+    }
+    progress::before{
+        top: 155%;
+    }
+    progress::after{
+        top: 155%;
+        right: 0%;
+    }
+}

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+
+    <title>Frontend Mentor | Fylo data storage component</title>
+
+    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+    <style>
+      .attribution {
+        font-size: 11px;
+        text-align: center;
+      }
+      .attribution a {
+        color: hsl(228, 45%, 44%);
+      }
+    </style>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main>
+      <div class="first-section">
+        <img src="./images/logo.svg" alt="The logo of Fulo" />
+        <div class="icons-div">
+          <div class="img">
+            <img
+              src="./images/icon-document.svg"
+              alt="A typical Document logo"
+            />
+          </div>
+          <div class="img">
+            <img src="./images/icon-folder.svg" alt="A typical Folder logo" />
+          </div>
+          <div class="img">
+            <img src="./images/icon-upload.svg" alt="A typical Upload logo" />
+          </div>
+        </div>
+      </div>
+      <div class="second-section">
+        <p>You’ve used <strong>815 GB</strong> of your storage</p>
+        <div class="storage-div">
+          <progress max="1000" min="0" value="815"></progress>
+          <div class="floating-div">
+            <h1>185</h1>
+            <p>GB left</p>
+          </div>
+        </div>
+      </div>
+    </main>
+    <footer>
+      <div class="attribution">
+        Challenge by
+        <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+          >Frontend Mentor</a
+        >. Coded by
+        <a href="https://www.linkedin.com/in/chimi-rinzin-20178a291/"
+          >Chimi Rinzin</a
+        >.
+      </div>
+    </footer>
+  </body>
+</html>
